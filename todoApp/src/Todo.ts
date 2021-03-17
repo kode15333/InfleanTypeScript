@@ -1,4 +1,4 @@
-import {Priority} from "./type";
+import {Priority, PRIORITY_NAME_MAP} from "./type";
 
 export default class Todo {
     static nextId: number = 1;
@@ -8,6 +8,6 @@ export default class Todo {
     }
 
     toString() {
-        return `${this.id}) 제목: ${this.title} (우선순위: ${this.priority})`;
+        return `${this.id}) 제목: ${this.title} (우선순위: ${PRIORITY_NAME_MAP[this.priority]})`;
     }
 }
