@@ -8,6 +8,7 @@ export abstract class Command {
         return `${this.key} : ${this.desc}`;
     }
 
+    // abstract에는 더이상 async가 붙질 못한다.
     abstract run(state: AppState): Promise<void>;
 }
 
