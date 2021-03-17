@@ -2,6 +2,7 @@ import {waitForInput} from "./input";
 import {Action, AppState, Priority} from "./type";
 import Todo from "./Todo";
 import {Command, CommandDeleteTodo, CommandNewTodo, CommandPrintTodos} from "./Command";
+import chalk from "chalk";
 const commands: Command[] = [new CommandPrintTodos(), new CommandNewTodo(), new CommandDeleteTodo()];
 
 async function main(){

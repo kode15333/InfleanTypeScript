@@ -1,4 +1,5 @@
 import {Priority, PRIORITY_NAME_MAP} from "./type";
+import chalk from "chalk";
 
 export default class Todo {
     static nextId: number = 1;
@@ -8,6 +9,13 @@ export default class Todo {
     }
 
     toString() {
-        return `${this.id}) 제목: ${this.title} (우선순위: ${PRIORITY_NAME_MAP[this.priority]})`;
+        return chalk`{blue.bold ${this.id})} 제목: {bold ${this.title}} (우선순위: {${PRIORITY_STYLE__MAP[this.priority]} ${PRIORITY_NAME_MAP[this.priority]}})`;
     }
+}
+
+const PRIORITY_STYLE__MAP: { [key in Priority]: string } = {
+    [Priority.High]: 'red.bold',
+    [Priority.Medium]: 'grey.bold',
+    [Priority.Low]: 'yellow.bold',
+
 }
